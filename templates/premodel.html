@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Model Input
+{% endblock %}
+
+{% block main %}
+<!DOCTYPE html>
+
+{% if errorinput == True %}
+{% block content%}
+<div class="alert alert-warning" role="alert">
+  You must input a number between 0 and 100 in each of the boxes below.
+</div>
+{% endblock content%}
+{% endif %}
+
+<h1><b>Demonstrating our Model</b></h1>
+
+<h4 style="text-align:left;"><br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Keras/Tensorflow machine learning model for stem cell is available for testing and
+    usage by the general public below. Simply input the percentage expression of each of the genes below on a scale of 0 to
+    100. For example, if one were to test a case where the gene FGF13 was fully expressed, the number 100 would be
+    inputted into the first box below. Press validate afterwards to obtain the probability that this combination of
+    genes results in a stem cell.<br></br></h4>
+
+    <form action="/demonstration" method="post">
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="FGF13" placeholder="FGF13 (%)" type="text" required/>
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="GDF3" placeholder="GDF3 (%)" type="text" required/>
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="SKIL" placeholder="SKIL (%)" type="text" required/>
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="ERAS" placeholder="ERAS (%)" type="text" required/>
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="TRIM28" placeholder="TRIM28 (%)" type="text" required/>
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="ZFX" placeholder="ZFX (%)" type="text" required/>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Validate</button>
+    </form>
+<br>
+<h4>Our model is also available for download on Github at <a href="https://github.com/mmspmclc/SCSeeker-ML-Stem-Cell">https://github.com/mmspmclc/SCSeeker-ML-Stem-Cell</a>.</h4>
+
+    <div class="mt-md-4">
+
+    <style>
+    footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f4511e;
+    }
+    </style>
+
+{% endblock %}

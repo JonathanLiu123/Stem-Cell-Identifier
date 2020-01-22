@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Methodology
+{% endblock %}
+
+{% block main %}
+<head>
+<style>
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+</style>
+</head>
+<body>
+
+<h1><b>Our Methodology</b></h1>
+<br>
+<h4 style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We created a machine learning model using Google Brain's Tensorflow software to
+  predict the likelihood that a particular combination of genes will result in a stem cell. In particular, we utilized
+  the Keras deep learning library to create a neural network that takes gene expressions as inputs and creates a
+  regression model. This regression model outputs a probability that the given combination of genes will result in a
+  stem cell. We chose 6 genes known to be linked to stem cells for our model: FGF13, GDF3, SKIL, ERAS, TRIM28, and
+  ZFX. We trained and tested our model using the expression data of these genes in both stem
+  cell lines and non-stem cell lines, which was obtained through StemCellDB, an open-source database with genetic
+  information about stem cells and normal cells.</h4>
+<br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cHF3N69KmK4" frameborder="0" allow="accelerometer;
+autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<h1><b>Access our Code</b></h1>
+<br>
+<h4 style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our code for the ML model creation is available to the public on Github, as our goal is to
+  help stem cell researchers optimize their resources by screening possible genetic variations using our model. The code
+  and model can be found at the link below.</h4>
+<a href="https://github.com/mmspmclc/SCSeeker-ML-Stem-Cell" class="btn btn-primary">Download our Code</a>
+<br>
+<br>
+<h1><b>Accuracy of our Model</b></h1>
+<br>
+<h4 style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After 10 trials of running our program, we found that the models that our machine
+  learning program created were very accurate, with <strong>only an average error of 3.726% probability</strong> of being a stem cell.
+  Additionally, these 10 trials <strong>correctly categorized every single stem cell and non stem cell</strong> in the dataset, with
+  94.167% of these cells being categorized correctly within the 95% confidence interval. Shown below is a series of
+  plots showing the fit of our model; the straight line is where all the points would be if the model was perfect, and
+  the dots show the predicted values plotted against the actual values.</h4>
+<br>
+<div class="row">
+  <div class="column">
+    <img src="static/Figure_1.png" alt="Figure 1">
+    <img src="static/Figure_2.png" alt="Figure 2">
+    <img src="static/Figure_3.png" alt="Figure 3">
+    <img src="static/Figure_4.png" alt="Figure 4">
+    <img src="static/Figure_5.png" alt="Figure 5">
+  </div>
+  <div class="column">
+    <img src="static/Figure_6.png" alt="Figure 6">
+    <img src="static/Figure_7.png" alt="Figure 7">
+    <img src="static/Figure_8.png" alt="Figure 8">
+    <img src="static/Figure_9.png" alt="Figure 9">
+    <img src="static/Figure_10.png" alt="Figure 10">
+  </div>
+</div>
+<br>
+<br>
+<h1><b>Limitations of our Model</b></h1>
+  <br>
+<h4 style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While our model proved to be very accurate in predicting the likelihood that a
+  certain set of genes corresponds to a stem cell, it does still have some limitations. We currently only use 6
+  prominent genes in our model, while there are at least 250 genes known to be correlated with stem cells in some way.
+  An extension of this project is to integrate more of these genes into the model for greater accuracy. We welcome
+  others to continue developing and extending our ideas or code.</h4>
+
+</body>
+{% endblock %}

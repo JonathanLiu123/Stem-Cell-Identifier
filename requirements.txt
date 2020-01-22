@@ -1,0 +1,7 @@
+pandas
+matplotlib
+tensorflow
+tensorflow_docs
+flask
+flask_session
+werkzeug
